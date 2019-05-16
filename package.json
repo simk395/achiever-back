@@ -1,0 +1,30 @@
+{
+  "name": "achiever-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongodb": "^3.2.4",
+    "mongoose": "^5.5.8",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simk395/ebuy-back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simk395/ebuy-back/issues"
+  },
+  "homepage": "https://github.com/simk395/ebuy-back#readme"
+}
