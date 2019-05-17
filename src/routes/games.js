@@ -4,15 +4,17 @@ const router = new express.Router()
 
 
 // GET all owned games for given Steam ID
-router.get('/games', (req,res) => {
-    ownedGames((error, json) => {
+router.get('/games/:steamid', (req,res) => {
+    const steamid = req.params.steamid
+    ownedGames(steamid, (error, json) => {
         res.send(json)
     })
 })
 
 // GET all played games for given Steam ID
-router.get('/games/played', (req, res) => {
-    ownedGames((error, json) => {
+router.get('/games/played/:steamid', (req, res) => {
+    const steamid = req.params.steamid
+    ownedGames(steamid, (error, json) => {
         const games = json.games.filter(game => game.playtime_forever !== 0)
         res.send({
             game_count: games.length,
