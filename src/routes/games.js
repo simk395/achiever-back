@@ -7,6 +7,9 @@ const router = new express.Router()
 router.get('/games/:steamid', (req,res) => {
     const steamid = req.params.steamid
     ownedGames(steamid, (error, json) => {
+        if(error || !json){
+            return res.status(400).send()
+        }
         res.send(json)
     })
 })
@@ -15,6 +18,9 @@ router.get('/games/:steamid', (req,res) => {
 router.get('/games/played/:steamid', (req, res) => {
     const steamid = req.params.steamid
     ownedGames(steamid, (error, json) => {
+        if(error || !json){
+            return res.status(400).send()
+        }
         const games = json.games.filter(game => game.playtime_forever !== 0)
         res.send({
             game_count: games.length,

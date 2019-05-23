@@ -1,6 +1,7 @@
 const express = require('express')
 const gamesRouter = require('./routes/games')
 const achievementsRouter = require('./routes/achievements')
+const profilesRouter = require('./routes/profiles')
 const cors = require('cors')
 
 const app = express()
@@ -11,6 +12,9 @@ app.use(express.json())
 app.use(cors())
 app.use(gamesRouter)
 app.use(achievementsRouter)
+app.use(profilesRouter)
+
+
 
 app.listen(port, () => {
     console.log('Server is up on port ' + port)
